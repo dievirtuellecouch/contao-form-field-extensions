@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file source-language="en">
+    <body>
+      <trans-unit id="tl_form_field.helpText.0">
+        <source>Help text</source>
+      </trans-unit>
+      <trans-unit id="tl_form_field.helpText.1">
+        <source>Additional text below the input. Can be used to describe the field’s requirements for example.</source>
+      </trans-unit>
+      <trans-unit id="tl_form_field.htmlInputmode.0">
+        <source>Inputmode</source>
+      </trans-unit>
+      <trans-unit id="tl_form_field.htmlInputmode.1">
+        <source>Set the inputmode attribute.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

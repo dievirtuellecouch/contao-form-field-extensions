@@ -1,0 +1,8 @@
+<?php $this->extend('form_textfield') ?>
+
+<?php $this->block('label') ?>
+    <?php $this->parent(); ?>
+    <?php if (!empty($this->helpText)): ?>
+        <p><?php echo $this->helpText ?></p>
+    <?php endif; ?>
+<?php $this->endblock() ?>
