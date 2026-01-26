@@ -1,25 +1,25 @@
 {
     "name": "dvc/contao-form-field-extensions",
-    "description": "Add help text and inputmode to Contao’s form fields.",
+    "description": "Contao bundle for form field extensions with help text support",
+    "version": "0.9.1",
     "type": "contao-bundle",
-    "version": "0.9.0",
-    "require": {
-        "php": "^8.1",
-        "contao/core-bundle": "^4.13 || ^5.3"
-    },
-    "license": "LGPL-3.0-or-later",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Jonathan Hermann",
-            "email": "jh@d-v-c.net"
+            "name": "DVC",
+            "email": "info@dvc.de"
         }
     ],
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^5.0"
+    },
     "autoload": {
         "psr-4": {
-            "DVC\\FormFieldExtensions\\": "src/"
+            "Dvc\\ContaoFormFieldExtensionsBundle\\": "src/"
         }
     },
     "extra": {
-        "contao-manager-plugin": "DVC\\FormFieldExtensions\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Dvc\\ContaoFormFieldExtensionsBundle\\ContaoManager\\Plugin"
     }
 }

@@ -1,19 +1,21 @@
 <?php
 
-namespace DVC\FormFieldExtensions\ContaoManager;
+declare(strict_types=1);
 
+namespace Dvc\ContaoFormFieldExtensionsBundle\ContaoManager;
+
+use Dvc\ContaoFormFieldExtensionsBundle\DvcContaoFormFieldExtensionsBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use DVC\FormFieldExtensions\FormFieldExtensionsBundle;
 
 class Plugin implements BundlePluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(FormFieldExtensionsBundle::class)
+            BundleConfig::create(DvcContaoFormFieldExtensionsBundle::class)
                 ->setLoadAfter([
                     ContaoCoreBundle::class,
                 ])
