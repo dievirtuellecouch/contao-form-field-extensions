@@ -1,7 +1,7 @@
 {
     "name": "dvc/contao-form-field-extensions",
-    "description": "Contao bundle for form field extensions with help text support",
-    "version": "0.9.1",
+    "description": "Contao bundle for form field extensions with help text and inputmode support",
+    "version": "5.7.0",
     "type": "contao-bundle",
     "license": "MIT",
     "authors": [
@@ -11,8 +11,8 @@
         }
     ],
     "require": {
-        "php": "^8.1",
-        "contao/core-bundle": "^5.0"
+        "php": "^8.3",
+        "contao/core-bundle": "^5.7"
     },
     "autoload": {
         "psr-4": {

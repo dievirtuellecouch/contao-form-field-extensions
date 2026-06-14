@@ -1,17 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['helpText'] = [
     'exclude' => true,
     'inputType' => 'text',
     'eval' => [
+        'decodeEntities' => true,
         'tl_class' => 'clr',
         'maxlength' => 255,
     ],
     'sql' => [
         'type' => 'string',
-        'length' => '255',
+        'length' => 255,
         'default' => '',
         'notnull' => true,
     ],
@@ -23,6 +26,7 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['htmlInputmode'] = [
     'eval' => [
         'tl_class' => 'w50 clr',
         'includeBlankOption' => true,
+        'chosen' => true,
     ],
     'options' => [
         'text',
@@ -35,26 +39,45 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['htmlInputmode'] = [
     ],
     'sql' => [
         'type' => 'string',
-        'length' => '16',
+        'length' => 16,
         'default' => '',
         'notnull' => true,
     ],
 ];
 
-PaletteManipulator::create()
-    ->addField('helpText', 'fconfig_legend', PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('text', 'tl_form_field')
-    ->applyToPalette('password', 'tl_form_field')
-    ->applyToPalette('textarea', 'tl_form_field')
-    ->applyToPalette('select', 'tl_form_field')
-    ->applyToPalette('radio', 'tl_form_field')
-    ->applyToPalette('checkbox', 'tl_form_field')
-    ->applyToPalette('upload', 'tl_form_field')
-    ->applyToPalette('range', 'tl_form_field')
-    ->applyToPalette('captcha', 'tl_form_field')
-;
+foreach ([
+    'text',
+    'textdigit',
+    'textcustom',
+    'password',
+    'passwordcustom',
+    'textarea',
+    'textareacustom',
+    'select',
+    'radio',
+    'checkbox',
+    'upload',
+    'range',
+    'captcha',
+] as $palette) {
+    PaletteManipulator::create()
+        ->addField('helpText', 'fconfig_legend', PaletteManipulator::POSITION_APPEND)
+        ->applyToPalette($palette, 'tl_form_field')
+    ;
+}
 
-PaletteManipulator::create()
-    ->addField('htmlInputmode', 'expert_legend', PaletteManipulator::POSITION_APPEND)
-    ->applyToPalette('text', 'tl_form_field')
-;
+foreach ([
+    'text',
+    'textdigit',
+    'textcustom',
+    'password',
+    'passwordcustom',
+    'textarea',
+    'textareacustom',
+    'captcha',
+] as $palette) {
+    PaletteManipulator::create()
+        ->addField('htmlInputmode', 'expert_legend', PaletteManipulator::POSITION_APPEND)
+        ->applyToPalette($palette, 'tl_form_field')
+    ;
+}

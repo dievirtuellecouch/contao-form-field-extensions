@@ -3,3 +3,10 @@ services:
     autowire: true
     autoconfigure: true
     public: false
+
+  Dvc\ContaoFormFieldExtensionsBundle\:
+    resource: ../../
+    exclude:
+      - ../../ContaoManager
+      - ../../DependencyInjection
+      - ../../DvcContaoFormFieldExtensionsBundle.php

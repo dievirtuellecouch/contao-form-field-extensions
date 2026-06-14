@@ -1,0 +1,8 @@
+{% extends '@Contao/form_text.html.twig' %}
+
+{% block label %}
+    {{ parent() }}
+    {% if this.helpText|default %}
+        <p>{{ this.helpText|insert_tag_raw }}</p>
+    {% endif %}
+{% endblock %}
